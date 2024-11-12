@@ -1,9 +1,9 @@
 ---
-title: "QM 2023 Week 11: Logit and Probit Models"
+title: "QM 2024 Week 11: Logit and Probit Models"
 author:
-  - "Oliver Rittmann"
   - "Domantas Undzėnas"
-date: "November 16 | 17, 2023"
+  - "Lisa-Marie Müller"
+date: "November 14 | 15, 2024"
 output:
   html_document:
     toc: yes
@@ -110,7 +110,7 @@ beta0 <- 0.25
 beta1 <- -0.8
 
 # Randomly draw an Independent Variable
-set.seed(2023)
+set.seed(2024)
 X <- rnorm(n, 0, 1)
 ```
 
@@ -817,11 +817,11 @@ Now, you can follow exactly the same steps as above:
 4.  Draw from the distribution `nsim` times.
 
 ```{r logit-31, eval = F}
-beta_hat <- coef(m_fearon1)
-V_hat <- vcov(m_fearon1)
+beta_hat <- 
+V_hat <- 
 
 library(MASS)
-S <- mvrnorm(nsim, beta_hat, V_hat) 
+S <- 
 ```
 
 ### Calculate Expected Values {.unnumbered}
@@ -829,14 +829,14 @@ S <- mvrnorm(nsim, beta_hat, V_hat)
 Let's use the scenario from above.
 
 ```{r logit-32, eval = F}
-Xbeta <- S %*% t(scenario)
+Xbeta <- 
 
 ```
 
 To get expected values for p, we need to plug in the `Xbeta` values into the response function to get simulated probabilities.
 
 ```{r logit-33, eval = F}
-p_sim <- plogis(Xbeta)
+p_sim <- 
 ```
 
 Pro Question: **How could we include fundamental uncertainty?**
@@ -844,8 +844,8 @@ Pro Question: **How could we include fundamental uncertainty?**
 Now we also want means and quantiles:
 
 ```{r logit-34, eval = F}
-p_mean <- apply(p_sim, 2, mean)
-p_qu <- t(apply(p_sim, 2, quantile, prob = c(0.025, 0.975)))
+p_mean <- 
+p_qu <- 
 ```
 
 ### Plot {.unnumbered}
